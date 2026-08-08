@@ -160,6 +160,20 @@
 
   <div class="row">
     <div class="field">
+      <label for="provider">AI provider</label>
+      <select id="provider" name="provider">
+        <option value="groq" selected>Groq</option>
+        <option value="openai">OpenAI</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="api_key">API key</label>
+      <input id="api_key" name="api_key" type="password" autocomplete="off" required />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
       <label for="travelers">Travelers</label>
       <input id="travelers" name="travelers" type="text" placeholder="2 adults" required />
     </div>
@@ -226,6 +240,8 @@
     e.preventDefault();
 
     const payload = {
+      provider: form.provider.value,
+      api_key: form.api_key.value.trim(),
       destination: form.destination.value.trim(),
       start_date: form.start_date.value,
       days: parseInt(form.days.value, 10),

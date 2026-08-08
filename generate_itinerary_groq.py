@@ -10,6 +10,7 @@ Set GROQ_API_KEY and PEXELS_API_KEY in your environment (or .env) before running
 
 import os
 from langchain_groq import ChatGroq
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 
@@ -61,18 +62,28 @@ prompt = ChatPromptTemplate.from_messages([
     ("human", HUMAN_PROMPT),
 ])
 
-llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
-    api_key=os.getenv("GROQ_API_KEY"),
-    temperature=0.4,
-)
+def build_chain(provider: str, api_key: str):
+    if provider == "groq":
+        llm = ChatGroq(
+            model="llama-3.3-70b-versatile",
+            api_key=api_key,
+            temperature=0.4,
+        )
+    elif provider == "openai":
+        llm = ChatOpenAI(
+            model="gpt-4o",
+            api_key=api_key,
+            temperature=0.4,
+        )
+    else:
+        raise ValueError("provider must be groq or openai")
 
-structured_llm = llm.with_structured_output(Itinerary)
-
-chain = prompt | structured_llm
+    return prompt | llm.with_structured_output(Itinerary)
 
 
 def generate(
+    provider: str,
+    api_key: str,
     destination: str,
     start_date: str,
     days: int,
@@ -89,6 +100,10 @@ def generate(
     generate_pdf: bool = False,
     pdf_path: str | None = None,
 ):
+    if not api_key:
+        raise ValueError("An API key is required.")
+
+    chain = build_chain(provider, api_key)
     last_err = None
     result: Itinerary | None = None
 

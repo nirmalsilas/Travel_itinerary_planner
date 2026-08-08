@@ -111,6 +111,9 @@
 
   footer{padding:4rem 8vw 5rem;text-align:center;font-family:'JetBrains Mono', monospace;font-size:0.72rem;color:var(--ink-soft);letter-spacing:0.08em;}
   .load-state{padding:10rem 8vw;text-align:center;font-family:'JetBrains Mono', monospace;color:var(--ink-soft);}
+  .download-toolbar{position:fixed;top:1.25rem;right:1.5rem;z-index:60;}
+  #download-pdf-btn{padding:0.7rem 1rem;font-family:'JetBrains Mono', monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--paper);background:var(--indigo-deep);border:1px solid var(--indigo-deep);border-radius:3px;cursor:pointer;box-shadow:0 4px 12px rgba(28,25,18,0.18);}
+  #download-pdf-btn:hover{background:var(--indigo);}
 
   @media (max-width: 760px){
     .overview-grid{grid-template-columns:1fr 1fr;}
@@ -128,11 +131,17 @@
   @media (max-width: 520px){
     .overview-grid{grid-template-columns:1fr;}
   }
+  @media print{
+    .download-toolbar{display:none;}
+  }
 </style>
 </head>
 <body>
 
 <div class="scroll-rail" aria-hidden="true"></div>
+<div class="download-toolbar">
+  <button id="download-pdf-btn" type="button" onclick="window.print()">Download as PDF</button>
+</div>
 <main id="app">
   <div class="load-state">Loading itinerary…</div>
 </main>

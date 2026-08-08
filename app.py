@@ -28,6 +28,8 @@ app.mount("/files", StaticFiles(directory=OUTPUT_DIR), name="files")
 
 
 class TripRequest(BaseModel):
+    provider: str = "groq"
+    api_key: str
     destination: str
     start_date: str
     days: int
@@ -48,6 +50,10 @@ def index():
 
 @app.post("/generate")
 def generate_endpoint(req: TripRequest):
+    if req.provider not in {"groq", "openai"}:
+        raise HTTPException(400, "provider must be groq or openai.")
+    if not req.api_key.strip():
+        raise HTTPException(400, "api_key is required.")
     if req.days < 1 or req.days > 30:
         raise HTTPException(400, "days must be between 1 and 30.")
     if not req.destination.strip():
@@ -59,6 +65,8 @@ def generate_endpoint(req: TripRequest):
 
     try:
         generate(
+            provider=req.provider,
+            api_key=req.api_key,
             destination=req.destination,
             start_date=req.start_date,
             days=req.days,
