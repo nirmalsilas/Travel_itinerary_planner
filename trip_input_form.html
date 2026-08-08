@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plan a Trip</title>
+<style>
+  :root {
+    --indigo-deep: #2C2A6B;
+    --indigo-soft: #4B48A0;
+    --cream: #FAF7F0;
+    --paper: #FFFFFF;
+    --ink: #1F1D3A;
+    --muted: #7A7791;
+    --border: #E4E0D4;
+    --accent: #C9A24B; /* stamp / seal gold, ties to a travel-doc feel */
+    --mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--mono);
+    display: flex;
+    justify-content: center;
+    padding: 48px 20px;
+  }
+
+  form {
+    width: 100%;
+    max-width: 620px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 40px 36px 32px;
+    position: relative;
+  }
+
+  form::before {
+    content: "ITINERARY";
+    position: absolute;
+    top: -11px;
+    left: 32px;
+    background: var(--cream);
+    padding: 0 10px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-size: 20px;
+    letter-spacing: 0.01em;
+    margin: 0 0 4px;
+    color: var(--indigo-deep);
+  }
+
+  .sub {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  .row { display: flex; gap: 16px; margin-bottom: 18px; }
+  .field { flex: 1 1 0; min-width: 0; margin-bottom: 18px; }
+  .row .field { margin-bottom: 0; }
+
+  label {
+    display: block;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--indigo-soft);
+    margin-bottom: 6px;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    font-family: var(--mono);
+    font-size: 13.5px;
+    color: var(--ink);
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 9px 10px;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--indigo-soft);
+  }
+
+  textarea { resize: vertical; min-height: 56px; }
+
+  .checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .checkbox-field input { width: auto; }
+  .checkbox-field label { margin: 0; text-transform: none; letter-spacing: normal; font-size: 13px; color: var(--ink); }
+
+  button {
+    width: 100%;
+    background: var(--indigo-deep);
+    color: var(--cream);
+    border: none;
+    border-radius: 3px;
+    padding: 13px;
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  button:hover { background: var(--indigo-soft); }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  #result {
+    max-width: 620px;
+    width: 100%;
+    margin-top: 18px;
+    font-size: 12.5px;
+  }
+  #result.hidden { display: none; }
+  #result a {
+    display: inline-block;
+    color: var(--indigo-deep);
+    border-bottom: 1px solid var(--accent);
+    text-decoration: none;
+  }
+  #result.error { color: #B3413B; }
+
+  @media (max-width: 640px) {
+    body { padding: 32px 12px; }
+    form { padding: 32px 22px 26px; }
+    .row { flex-direction: column; gap: 0; margin-bottom: 0; }
+    .row .field { margin-bottom: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<form id="trip-form">
+  <h1>Plan a Trip</h1>
+
+  <div class="field">
+    <label for="destination">Destination</label>
+    <input id="destination" name="destination" type="text" placeholder="Nara, Japan" required />
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label for="start_date">Start date</label>
+      <input id="start_date" name="start_date" type="date" required />
+    </div>
+    <div class="field">
+      <label for="days">Days</label>
+      <input id="days" name="days" type="number" min="1" max="30" value="5" required />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label for="provider">AI provider</label>
+      <select id="provider" name="provider">
+        <option value="groq" selected>Groq</option>
+        <option value="openai">OpenAI</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="api_key">API key</label>
+      <input id="api_key" name="api_key" type="password" autocomplete="off" required />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label for="travelers">Travelers</label>
+      <input id="travelers" name="travelers" type="text" placeholder="2 adults" required />
+    </div>
+    <div class="field">
+      <label for="pace">Pace</label>
+      <select id="pace" name="pace">
+        <option>Relaxed</option>
+        <option selected>Moderate</option>
+        <option>Packed</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label for="budget">Budget</label>
+      <select id="budget" name="budget">
+        <option>Budget</option>
+        <option selected>Mid-range</option>
+        <option>Luxury</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="budget_currency">Currency</label>
+      <select id="budget_currency" name="budget_currency">
+        <option selected>INR</option>
+        <option>USD</option>
+        <option>EUR</option>
+        <option>JPY</option>
+        <option>GBP</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="interests">Interests</label>
+    <input id="interests" name="interests" type="text" placeholder="temples, food, photography, quiet hidden gems" required />
+  </div>
+
+  <div class="field">
+    <label for="special_notes">Special notes</label>
+    <textarea id="special_notes" name="special_notes" placeholder="Traveling from Bengaluru, India. Prefer walkable neighborhoods."></textarea>
+  </div>
+
+  <div class="checkbox-field">
+    <input id="generate_pdf" name="generate_pdf" type="checkbox" checked />
+    <label for="generate_pdf">Enable PDF export in the itinerary</label>
+  </div>
+
+  <button type="submit" id="submit-btn">Generate itinerary</button>
+</form>
+
+<div id="result" class="hidden"></div>
+
+<script>
+  const form = document.getElementById("trip-form");
+  const resultEl = document.getElementById("result");
+  const submitBtn = document.getElementById("submit-btn");
+
+  // Adjust this if your handler listens on a different path.
+  const ENDPOINT = "/generate";
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      provider: form.provider.value,
+      api_key: form.api_key.value.trim(),
+      destination: form.destination.value.trim(),
+      start_date: form.start_date.value,
+      days: parseInt(form.days.value, 10),
+      travelers: form.travelers.value.trim(),
+      budget: form.budget.value,
+      budget_currency: form.budget_currency.value,
+      pace: form.pace.value,
+      interests: form.interests.value.trim(),
+      special_notes: form.special_notes.value.trim(),
+      generate_pdf: form.generate_pdf.checked,
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Generating…";
+    resultEl.className = "hidden";
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const contentType = res.headers.get("content-type") || "";
+
+      if (!res.ok) {
+        let detail = `Server returned ${res.status}`;
+        if (contentType.includes("application/json")) {
+          const err = await res.json().catch(() => ({}));
+          detail = err.detail || err.error || detail;
+        }
+        throw new Error(detail);
+      }
+
+      const data = await res.json();
+      const link = data.output_url || data.output_path;
+      if (!link) throw new Error("Server didn't return a link to the itinerary.");
+
+      // Navigate the current tab straight to the generated page.
+      window.location.href = link;
+      return;
+    } catch (err) {
+      resultEl.textContent = `Error: ${err.message}`;
+      resultEl.className = "error";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Generate itinerary";
+    }
+  });
+</script>
+</body>
+</html>

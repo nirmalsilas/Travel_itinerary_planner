@@ -1,0 +1,286 @@
+{
+  "destination": "Kyoto",
+  "heroMark": "京",
+  "hero": {
+    "eyebrow": "Field itinerary — Honshu, Japan",
+    "titleHtml": "Kyoto,<br>unrolled like <em>an emaki scroll.</em>",
+    "subtitle": "Five days moving from vermillion torii gates to bamboo groves to lantern-lit lanes — paced for two travelers who want culture and food without the rush.",
+    "image": {
+      "url": "https://picsum.photos/id/1043/1600/1000",
+      "alt": "Misty hillside temple grounds at dawn"
+    },
+    "facts": [
+      { "label": "Duration", "value": "5 Days" },
+      { "label": "Budget", "value": "Mid-range · ¥22,000–28,000 /day" },
+      { "label": "Pace", "value": "Moderate" },
+      { "label": "Best season", "value": "Mar–May · Oct–Nov" },
+      { "label": "Travelers", "value": "2 Adults" }
+    ]
+  },
+  "overview": [
+    { "label": "Route Strategy", "value": "Single base in central Kyoto; radiate outward to Arashiyama and the northern temples, return each night.", "accent": true },
+    { "label": "Weather", "value": "Mild, 15–22°C with occasional rain — pack a compact umbrella." },
+    { "label": "Currency", "value": "Japanese Yen (¥). Cash still rules at small shrines and food stalls." },
+    { "label": "Transportation", "value": "JR trains for day trips, city buses and subway within Kyoto, walking through old districts." },
+    { "label": "Travel Style", "value": "Culture-forward with deliberate food stops — temples in the morning light, markets by dusk." },
+    { "label": "Key Highlights", "value": "Fushimi Inari at sunrise, Arashiyama bamboo grove, Kinkaku-ji, Nishiki Market, Gion at night.", "accent": true }
+  ],
+  "days": [
+    {
+      "number": 1,
+      "date": "2026-04-10",
+      "theme": "FUSHIMI & GION",
+      "title": "Vermillion Gates & Old Kyoto Dusk",
+      "coverImage": {
+        "url": "https://picsum.photos/id/1015/1600/700",
+        "alt": "Rows of red torii gates climbing a wooded hillside"
+      },
+      "beats": [
+        {
+          "time": "08:00",
+          "kind": "Morning",
+          "text": "Breakfast at a Kyoto Station café before the crowds arrive.",
+          "durationMinutes": 45,
+          "cost": "¥900",
+          "location": { "name": "Kyoto Station area", "address": "Karasuma-dori, Shimogyo-ku", "lat": 34.9858, "lng": 135.7588 }
+        },
+        {
+          "time": "10:00",
+          "kind": "Activity",
+          "text": "Fushimi Inari Shrine — climb the early torii gate paths while the light is still soft.",
+          "durationMinutes": 120,
+          "cost": "Free",
+          "location": { "name": "Fushimi Inari Taisha", "address": "68 Fukakusa Yabunouchicho, Fushimi-ku", "lat": 34.9671, "lng": 135.7727 },
+          "image": { "url": "https://picsum.photos/id/1039/300/300", "alt": "Torii gate tunnel path" }
+        },
+        {
+          "time": "12:30",
+          "kind": "Lunch",
+          "text": "Inari-zushi and grilled skewers from the stalls at the shrine's base.",
+          "durationMinutes": 45,
+          "cost": "¥1,200",
+          "location": { "name": "Fushimi Inari food stalls", "lat": 34.9671, "lng": 135.7727 }
+        },
+        {
+          "time": "14:00",
+          "kind": "Main attraction",
+          "text": "Tofuku-ji Temple — quiet Zen gardens a short train ride from Fushimi.",
+          "durationMinutes": 90,
+          "cost": "¥500",
+          "location": { "name": "Tofuku-ji", "address": "15-778 Honmachi, Higashiyama-ku", "lat": 34.9767, "lng": 135.7739 },
+          "image": { "url": "https://picsum.photos/id/1044/300/300", "alt": "Zen rock garden" }
+        },
+        {
+          "time": "16:30",
+          "kind": "Coffee / Rest",
+          "text": "% Arabica Kyoto for a slow coffee and a breather.",
+          "durationMinutes": 30,
+          "cost": "¥600",
+          "location": { "name": "% Arabica Higashiyama", "lat": 34.9987, "lng": 135.7745 }
+        },
+        {
+          "time": "18:00",
+          "kind": "Evening",
+          "text": "Wander Gion's lantern-lit lanes; watch for geiko heading to evening appointments.",
+          "durationMinutes": 60,
+          "cost": "Free",
+          "location": { "name": "Gion District", "lat": 35.0037, "lng": 135.7756 }
+        },
+        {
+          "time": "20:00",
+          "kind": "Dinner",
+          "text": "Kaiseki-style multi-course dinner at a small Gion restaurant.",
+          "durationMinutes": 90,
+          "cost": "¥8,000",
+          "location": { "name": "Gion Karyo", "address": "Gion, Higashiyama-ku", "lat": 35.0034, "lng": 135.7751 }
+        }
+      ],
+      "gallery": [
+        { "url": "https://picsum.photos/id/1039/440/300", "alt": "Torii gate corridor", "caption": "Fushimi Inari — the upper trail" },
+        { "url": "https://picsum.photos/id/1040/440/300", "alt": "Stone lantern in a garden", "caption": "Tofuku-ji garden detail" },
+        { "url": "https://picsum.photos/id/1041/440/300", "alt": "Lantern-lit street at dusk", "caption": "Gion after dark" }
+      ],
+      "tip": "Arrive at Fushimi Inari before 9am; by mid-morning the lower gates are shoulder to shoulder."
+    },
+    {
+      "number": 2,
+      "date": "2026-04-11",
+      "theme": "ARASHIYAMA",
+      "title": "Bamboo, River, and Riverside Quiet",
+      "coverImage": {
+        "url": "https://picsum.photos/id/1053/1600/700",
+        "alt": "Tall bamboo grove with light filtering through"
+      },
+      "beats": [
+        {
+          "time": "07:30",
+          "kind": "Morning",
+          "text": "Early JR train to Arashiyama to catch the bamboo grove before tour groups.",
+          "durationMinutes": 25,
+          "cost": "¥240",
+          "location": { "name": "JR Saga-Arashiyama Station", "lat": 35.0156, "lng": 135.6775 }
+        },
+        {
+          "time": "08:30",
+          "kind": "Activity",
+          "text": "Walk the Arashiyama Bamboo Grove, then continue to Tenryu-ji Temple's garden.",
+          "durationMinutes": 90,
+          "cost": "¥500",
+          "location": { "name": "Arashiyama Bamboo Grove", "lat": 35.0170, "lng": 135.6717 },
+          "image": { "url": "https://picsum.photos/id/1053/300/300", "alt": "Bamboo grove pathway" }
+        },
+        {
+          "time": "12:00",
+          "kind": "Lunch",
+          "text": "Yudofu (hot tofu) set meal at a temple-adjacent restaurant.",
+          "durationMinutes": 60,
+          "cost": "¥2,200",
+          "location": { "name": "Shigetsu at Tenryu-ji", "lat": 35.0154, "lng": 135.6742 }
+        },
+        {
+          "time": "13:30",
+          "kind": "Main attraction",
+          "text": "Togetsukyo Bridge and the riverside path; rent a rowboat if the weather holds.",
+          "durationMinutes": 75,
+          "cost": "¥1,600",
+          "location": { "name": "Togetsukyo Bridge", "lat": 35.0111, "lng": 135.6779 },
+          "image": { "url": "https://picsum.photos/id/1043/300/300", "alt": "Wooden bridge over a river" }
+        },
+        {
+          "time": "15:30",
+          "kind": "Coffee / Rest",
+          "text": "Riverside café with views back toward the hills.",
+          "durationMinutes": 40,
+          "cost": "¥700",
+          "location": { "name": "Riverside café, Arashiyama", "lat": 35.0113, "lng": 135.6783 }
+        },
+        {
+          "time": "17:30",
+          "kind": "Evening",
+          "text": "Return to central Kyoto; browse Teramachi covered shopping street.",
+          "durationMinutes": 60,
+          "cost": "Free",
+          "location": { "name": "Teramachi Shopping Street", "lat": 35.0068, "lng": 135.7681 }
+        },
+        {
+          "time": "19:30",
+          "kind": "Dinner",
+          "text": "Izakaya dinner — small plates and local sake near Pontocho.",
+          "durationMinutes": 90,
+          "cost": "¥5,000",
+          "location": { "name": "Pontocho Alley", "lat": 35.0080, "lng": 135.7710 }
+        }
+      ],
+      "gallery": [
+        { "url": "https://picsum.photos/id/1053/440/300", "alt": "Bamboo grove", "caption": "Arashiyama Bamboo Grove" },
+        { "url": "https://picsum.photos/id/1043/440/300", "alt": "River bridge", "caption": "Togetsukyo Bridge at midday" }
+      ],
+      "tip": "Skip the Monkey Park if short on time; the bamboo grove and Tenryu-ji alone fill a satisfying morning."
+    }
+  ],
+  "hotels": [
+    {
+      "title": "Ryokan Suiran, Arashiyama",
+      "text": "A riverside luxury ryokan with private onsen baths and kaiseki breakfast included.",
+      "price": "¥42,000 / night",
+      "rating": 4.8,
+      "address": "Susukinobabacho, Ukyo-ku",
+      "image": { "url": "https://picsum.photos/id/1024/500/375", "alt": "Traditional ryokan exterior with garden" },
+      "bookingUrl": "https://www.suirankyoto.com"
+    },
+    {
+      "title": "Hotel Granvia Kyoto",
+      "text": "Directly above Kyoto Station — best pick for minimizing transit time on arrival and departure days.",
+      "price": "¥19,500 / night",
+      "rating": 4.5,
+      "address": "Kyoto Station Central Gate",
+      "image": { "url": "https://picsum.photos/id/1029/500/375", "alt": "Modern hotel lobby" },
+      "bookingUrl": "https://www.granviakyoto.com"
+    },
+    {
+      "title": "Gion Nanba",
+      "text": "Small boutique ryokan tucked in a quiet Gion side street, three minutes from the main lantern-lit lane.",
+      "price": "¥26,000 / night",
+      "rating": 4.7,
+      "address": "Gion, Higashiyama-ku",
+      "image": { "url": "https://picsum.photos/id/1031/500/375", "alt": "Boutique ryokan entrance" }
+    }
+  ],
+  "restaurants": [
+    {
+      "title": "Omen Nishiki",
+      "text": "Handmade udon in a warm dashi broth with a plate of seasonal vegetables to dip.",
+      "cuisine": "Udon",
+      "priceLevel": "¥¥",
+      "address": "Nishiki Market, Nakagyo-ku",
+      "image": { "url": "https://picsum.photos/id/1080/500/375", "alt": "Bowl of udon noodles" }
+    },
+    {
+      "title": "Gion Karyo",
+      "text": "Multi-course kaiseki built around whatever is best at the market that morning.",
+      "cuisine": "Kaiseki",
+      "priceLevel": "¥¥¥¥",
+      "address": "Gion, Higashiyama-ku",
+      "image": { "url": "https://picsum.photos/id/1060/500/375", "alt": "Elegant kaiseki course plating" },
+      "bookingUrl": "https://gion-karyo.jp"
+    },
+    {
+      "title": "Kagizen Yoshifusa",
+      "text": "150-year-old confectioner known for kuzukiri (arrowroot noodles) in cold syrup.",
+      "cuisine": "Sweets",
+      "priceLevel": "¥¥",
+      "address": "Gion, Higashiyama-ku",
+      "image": { "url": "https://picsum.photos/id/1074/500/375", "alt": "Traditional Japanese sweets" }
+    }
+  ],
+  "transport": [
+    { "title": "Airport transfer", "text": "Haruka Express from Kansai Airport to Kyoto Station, roughly 75 minutes." },
+    { "title": "Local transport", "text": "City buses and subway; a day pass pays off on temple-heavy days." },
+    { "title": "Walking advice", "text": "Higashiyama and Arashiyama are best explored on foot — plan for uneven stone paths." },
+    { "title": "Money-saving tip", "text": "An ICOCA IC card covers buses, subway, and konbini purchases in one tap." }
+  ],
+  "budget": {
+    "currency": "INR",
+    "rows": [
+      { "label": "Accommodation", "value": "₹5,300–7,000 /day" },
+      { "label": "Food", "value": "₹3,500–4,700 /day" },
+      { "label": "Transportation", "value": "₹880–1,470 /day" },
+      { "label": "Attractions", "value": "₹1,170–1,760 /day" }
+    ],
+    "total": { "label": "Estimated total (5 days)", "value": "₹64,500–82,000" },
+    "note": "Biggest expenses are accommodation and kaiseki dining. Saving tip: eat one casual noodle or market meal per day to offset a splurge dinner. Figures converted at approx. ₹0.586/¥1 (Jul 2026); actual payments in Japan are made in yen."
+  },
+  "packing": [
+    { "title": "Clothing", "text": "Layers for 15–22°C days; modest attire for temple visits." },
+    { "title": "Weather essentials", "text": "Compact umbrella and a light rain shell for spring showers." },
+    { "title": "Walking / transport", "text": "Broken-in walking shoes with grip for stone-paved slopes." },
+    { "title": "Electronics", "text": "Universal plug adapter (Type A) and a power bank for full sightseeing days." },
+    { "title": "Documents", "text": "Passport, travel insurance details, and printed hotel confirmations." },
+    { "title": "Trip-specific", "text": "A small tote for market and tea purchases along the way." }
+  ],
+  "tips": [
+    {
+      "key": "Safety",
+      "text": "Kyoto is very safe; ordinary city awareness after dark is sufficient."
+    },
+    {
+      "key": "Etiquette",
+      "text": "Bow lightly at shrine entrances; keep voices low inside temple grounds."
+    },
+    {
+      "key": "Payment",
+      "text": "IC cards and major credit cards work in most places; carry cash for small stalls."
+    },
+    {
+      "key": "Best photo spot",
+      "text": "The upper torii tunnels at Fushimi Inari just after sunrise.",
+      "image": { "url": "https://picsum.photos/id/1039/200/200", "alt": "Torii gate tunnel" }
+    },
+    {
+      "key": "Hidden gem",
+      "text": "Otagi Nenbutsu-ji — a quiet hillside temple with 1,200 individually carved stone statues, well past the Arashiyama crowds.",
+      "image": { "url": "https://picsum.photos/id/1084/200/200", "alt": "Moss-covered stone statues" }
+    }
+  ],
+  "footer": "Prepared as a field itinerary · Kyoto, Japan · 5 Days"
+}
